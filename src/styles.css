@@ -468,9 +468,34 @@ article[role="button"]:active {
 @media (min-width: 1440px) {
   .bento-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto 1.8fr;
+    grid-template-rows: auto 1fr;
     flex: 1;
     min-height: 0;
+    height: 100%;
+  }
+
+  /* Cell 1: Principal - top-left 2 columns */
+  .bento-grid > .bento-cell:nth-child(1) {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+
+  /* Cell 2: Experiencia - bottom-left column 1 */
+  .bento-grid > .bento-cell:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  /* Cell 3: Certificaciones - bottom-left column 2 */
+  .bento-grid > .bento-cell:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* Cell 4: Proyectos - entire right side (columns 3-4, rows 1-2) */
+  .bento-grid > .bento-cell:nth-child(4) {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 2;
   }
 }
 
@@ -537,6 +562,10 @@ article[role="button"]:active {
 .bento-span-2 { grid-column: span 1; }
 @media (min-width: 768px) { .bento-span-2 { grid-column: span 2; } }
 
+.bento-span-4 { grid-column: span 1; }
+@media (min-width: 768px) { .bento-span-4 { grid-column: span 2; } }
+@media (min-width: 1440px) { .bento-span-4 { grid-column: span 4; } }
+
 /* ─── Pixel Decorations ─────────────────────────────────────────── */
 .pixel-divider {
   border: none;
@@ -569,60 +598,31 @@ article[role="button"]:active {
   animation-timing-function: steps(8);
 }
 
-/* Row 1: slide from top */
-.bento-cell:nth-child(1) { animation-name: slide-in-top; animation-delay: 0s; }
-.bento-cell:nth-child(2) { animation-name: slide-in-top; animation-delay: 0.1s; }
-.bento-cell:nth-child(3) { animation-name: slide-in-top; animation-delay: 0.2s; }
+.bento-cell:nth-child(1) { animation-name: slide-in-left; animation-delay: 0s; }
+.bento-cell:nth-child(2) { animation-name: slide-in-bottom; animation-delay: 0.15s; }
+.bento-cell:nth-child(3) { animation-name: slide-in-bottom; animation-delay: 0.25s; }
+.bento-cell:nth-child(4) { animation-name: slide-in-right; animation-delay: 0.35s; }
 
-/* Row 2: slide from bottom */
-.bento-cell:nth-child(4) { animation-name: slide-in-bottom; animation-delay: 0.25s; }
-.bento-cell:nth-child(5) { animation-name: slide-in-bottom; animation-delay: 0.35s; }
-.bento-cell:nth-child(6) { animation-name: slide-in-bottom; animation-delay: 0.45s; }
-
-/* ─── Project Carousel Navigation ───────────────────────────────── */
-.project-nav-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 24px;
-  height: 24px;
+/* ─── Project List Navigation ───────────────────────────────── */
+.project-list-item {
   border: 2px solid var(--pixel-border-color);
-  background: var(--pixel-card-bg);
-  box-shadow: 2px 2px 0px var(--pixel-shadow-color);
-  cursor: pointer;
-  transition: none;
-  font-family: "VT323", monospace;
-  font-size: 0.8rem;
+  background: var(--pixel-bg);
   color: var(--pixel-text-primary);
-  padding: 0;
-  line-height: 1;
-}
-
-.project-nav-btn:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px var(--pixel-shadow-color);
-}
-
-.project-nav-btn:active {
-  transform: translate(3px, 3px);
-  box-shadow: 0px 0px 0px transparent;
-}
-
-.project-dots {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-
-.project-dot {
-  width: 8px; height: 8px;
-  border: 2px solid var(--pixel-border-color);
-  background: transparent;
+  transition: transform 0.1s steps(2), box-shadow 0.1s steps(2);
   cursor: pointer;
-  padding: 0;
 }
 
-.project-dot.active { background: var(--pixel-accent-blue); }
+.project-list-item:hover:not(.active) {
+  transform: translateX(3px);
+  border-color: var(--pixel-accent-yellow);
+}
+
+.project-list-item.active {
+  background: var(--pixel-border-color);
+  color: var(--pixel-bg);
+  box-shadow: 3px 3px 0px var(--pixel-shadow-color);
+  border-color: var(--pixel-border-color);
+}
 
 /* ─── Project iframe ────────────────────────────────────────────── */
 .project-iframe-wrap {

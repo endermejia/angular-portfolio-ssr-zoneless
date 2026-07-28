@@ -268,8 +268,8 @@ export class HomeComponent {
     {
       name: 'Sergio Solbes',
       repoUrl: 'https://github.com/endermejia/sergio-solbes',
-      siteUrl: 'https://sergio-solbes.vercel.app/',
-      siteName: 'sergio-solbes.vercel.app',
+      siteUrl: 'https://www.sergio-solbes-ferri.com/',
+      siteName: 'sergio-solbes-ferri.com',
       tags: [
         { name: 'Astro', icon: 'https://cdn.simpleicons.org/astro' },
         { name: 'Tailwind CSS', icon: 'https://cdn.simpleicons.org/tailwindcss' },

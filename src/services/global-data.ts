@@ -93,17 +93,6 @@ export class GlobalData {
           }
         },
       },
-      {
-        name: 'Contact',
-        icon: '@tui.send',
-        fn: () => {
-          if (typeof window !== 'undefined') {
-            document
-              ?.querySelector('#contact')
-              ?.scrollIntoView({ behavior: 'smooth' });
-          }
-        },
-      },
     ],
   });
 
@@ -135,6 +124,11 @@ export class GlobalData {
         href: 'https://www.linkedin.com/in/gabrimejia/',
         icon: '@tui.linkedin',
       },
+      {
+        title: 'Instagram',
+        href: 'https://www.instagram.com/gabri.mejia/',
+        icon: '@tui.instagram',
+      },
     ],
     Portfolio: [
       {
@@ -151,11 +145,6 @@ export class GlobalData {
         title: 'Projects',
         href: '#projects',
         icon: '@tui.layers',
-      },
-      {
-        title: 'Contact',
-        href: '#contact',
-        icon: '@tui.send',
       },
     ],
   });
