@@ -225,9 +225,9 @@ export class HomeComponent {
     {
       name: 'Nhoa Noir | Fotografía',
       repoUrl: 'https://github.com/endermejia/astro-photographer',
-      siteUrl: 'https://nhoanoir.com',
-      siteName: 'nhoanoir.com',
-      bgImage: 'https://nhoanoir.com/assets/images/og-image.jpg',
+      siteUrl: 'https://www.nhoasanchez.com/',
+      siteName: 'www.nhoasanchez.com',
+      bgImage: 'https://www.nhoasanchez.com/assets/images/og-image.jpg',
       tags: [
         { name: 'Astro', icon: 'https://cdn.simpleicons.org/astro' },
         { name: 'TypeScript', icon: 'https://cdn.simpleicons.org/typescript' },
